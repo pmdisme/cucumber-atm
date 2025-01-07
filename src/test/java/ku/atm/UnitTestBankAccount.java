@@ -35,4 +35,5 @@ public class UnitTestBankAccount {
                 () -> account.withdraw(10000));
         assertEquals(initialBalance, account.getBalance());
     }
+
 }

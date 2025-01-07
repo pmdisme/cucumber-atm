@@ -4,6 +4,8 @@ public class ATM {
 	private Bank bank;
 	private Customer currentCustomer;
 	private BankAccount currentAccount;
+	private boolean validLogin;
+
 
 	public ATM(Bank bank) {
 		this.bank = bank;
@@ -15,7 +17,7 @@ public class ATM {
 			currentAccount = currentCustomer.getAccount();
 			return true;
 		}
-        return false;
+        return false; // id or pin invalid
 	}
 
 	public void withdraw(double value) throws NotEnoughBalanceException {
@@ -25,7 +27,7 @@ public class ATM {
 
 	public void deposit(double value) {
 		if (currentAccount != null)
-            currentAccount.deposit(value);
+			currentAccount.deposit(value);
 	}
 
 	public double getBalance() {

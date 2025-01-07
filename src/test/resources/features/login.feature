@@ -13,3 +13,7 @@ Scenario: Correct id and pin
 Scenario: Incorrect pin
     When I login to ATM with id 1 and pin 222
     Then I cannot login
+
+Scenario: Login with id that is not exist
+    When I login to ATM with id 1234567 and pin 000
+    Then I cannot login
